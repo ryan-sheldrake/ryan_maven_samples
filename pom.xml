@@ -37,7 +37,7 @@
       					<version>1.6.7</version>
       					<extensions>true</extensions>
       					<configuration>
-        				<serverId>nexus</serverId>
+        				<serverId>N2_repo</serverId>
         				<nexusUrl>http://localhost:8082/nexus/</nexusUrl>
         				 <!-- update this to the correct id! -->
           				<stagingProfileId>1fae1dfd68d20</stagingProfileId>
