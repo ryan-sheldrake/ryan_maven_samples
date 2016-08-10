@@ -22,15 +22,36 @@
   </modules>
 
   <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/multi-module-site</url>
-    </site>
+     <snapshotRepository>
+            <id>N2_repo</id>
+            <url>http://localhost:8082/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>N2_repo</id>
+            <url>http://localhost:8082/nexus/content/repositories/Ryan_Releases/</url>
+        </repository>
   </distributionManagement>
 
   <build>
     <plugins>
+              
+		<plugin>
+      					<groupId>org.sonatype.plugins</groupId>
+      					<artifactId>nexus-staging-maven-plugin</artifactId>
+      					<version>1.6.7</version>
+      					<extensions>true</extensions>
+      					<configuration>
+        				<serverId>N2_repo</serverId>
+        				<nexusUrl>http://localhost:8082/nexus/</nexusUrl>
+        				 <!-- update this to the correct id! -->
+          				<stagingProfileId>1fae1dfd68d20</stagingProfileId>
+      					</configuration>
+      				</plugin>
+      
+      
+      
+      
+      
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -38,6 +59,8 @@
           <target>1.6</target>
         </configuration>
       </plugin>
+      
+      
 
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
