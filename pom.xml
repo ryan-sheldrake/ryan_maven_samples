@@ -19,7 +19,7 @@
     <maven>3.0.3</maven>
   </prerequisites>
 
-<distributionManagement>
+	<distributionManagement>
         <snapshotRepository>
             <id>N2_repo</id>
             <url>http://localhost:8082/nexus/content/repositories/snapshots</url>
