@@ -47,6 +47,30 @@
           				<stagingProfileId>1fae1dfd68d20</stagingProfileId>
       					</configuration>
       				</plugin>
+      				
+      			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <!--  archiving the classes breaks the admin screen loads in course.java
+                          the legacy lesson loader does not look in jar files for lessons  -->
+                    <archiveClasses>false</archiveClasses>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Specification-Title>${project.name}</Specification-Title>
+                            <Specification-Version>${project.version}</Specification-Version>
+                            <Implementation-Version>${build.number}</Implementation-Version>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+      				
+      				
+      				
                 </plugins>
             </build>
         </profile>
