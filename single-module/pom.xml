@@ -16,17 +16,6 @@
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
   </properties>
 
-  <distributionManagement>
-        <snapshotRepository>
-            <id>N2_repo</id>
-            <url>http://localhost:8082/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>N2_repo</id>
-            <url>http://localhost:8082/nexus/content/repositories/Ryan_Releases/</url>
-        </repository>
-  </distributionManagement>
-
 
   <build>
     <finalName>${project.artifactId}</finalName>
