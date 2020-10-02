@@ -1,4 +1,5 @@
-Simple Maven Projects
+Simple Maven Project
 ---------------------
 
-This repository contains two small Maven projects intended as examples of how a Maven projects can be setup. They were created to be used in a presentation about Maven.
+A simple maven project used for dependency testing. Just mvn package and ensure Repo is started (if required) to proxy the deps
+
